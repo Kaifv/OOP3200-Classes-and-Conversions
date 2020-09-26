@@ -81,9 +81,9 @@ int main()
 	}
 	/*WorkTicket other_ticket = arr[1].GetNumber();
 
-	cout << "\n New ticket is " << other_ticket << endl;
+	cout << "\n New ticket is " << other_ticket << endl;*/
 
-	cout << "\nA WorkTicket object has been copied.";*/
+	cout << "\nA WorkTicket object has been copied.";
 
 	std::cout << endl << endl;
 

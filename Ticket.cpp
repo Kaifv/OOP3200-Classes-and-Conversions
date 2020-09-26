@@ -15,10 +15,10 @@ WorkTicket::WorkTicket(int ticketNumber, int ticketDay, int ticketMonth, int tic
 	SetWorkTicket(ticketNumber, ticketDay, ticketMonth, ticketYear, std::move(clientID), std::move(issueDescrip));
 }
 
-//WorkTicket::WorkTicket(const WorkTicket& ticketobj)
-//{
-//	SetWorkTicket(ticketobj.GetNumber(), ticketobj.GetDay(), ticketobj.GetMonth(), ticketobj.GetYear(), ticketobj.GetID(), ticketobj.GetDescription());
-//}
+WorkTicket::WorkTicket(const WorkTicket& ticketobj)
+{
+	SetWorkTicket(ticketobj.GetNumber(), ticketobj.GetDay(), ticketobj.GetMonth(), ticketobj.GetYear(), ticketobj.GetID(), ticketobj.GetDescription());
+}
 //
 //bool WorkTicket::operator==(const WorkTicket& another_number) const
 //{

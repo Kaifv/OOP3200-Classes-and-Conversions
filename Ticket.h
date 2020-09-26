@@ -24,8 +24,8 @@ public:
 	//proper. 
 	WorkTicket(int myticketNumber = 1, int myticketDay = 1, int myticketMonth = 1, int myticketYear = 2000, std::string myclientID = "", std::string myissueDescrip = "");
 
-	///*copy costructor*/
-	//WorkTicket(const WorkTicket& ticketobj);
+	/*copy costructor*/
+	WorkTicket(const WorkTicket& ticketobj);
 
 	///* Operator overloads */
 	//bool operator==(const WorkTicket& another_number) const;
