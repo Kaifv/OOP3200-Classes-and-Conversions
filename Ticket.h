@@ -29,7 +29,7 @@ public:
 
 	///* Operator overloads */
 	bool operator==(const WorkTicket& another_number) const;
-	//WorkTicket operator=(const WorkTicket& other_ticket);
+	WorkTicket operator=(const WorkTicket& other_ticket);
 	operator std::string() const;
 
 
