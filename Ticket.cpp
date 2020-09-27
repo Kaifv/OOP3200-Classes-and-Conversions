@@ -198,38 +198,38 @@ std::string WorkTicket::ShowWorkTicket() const
 //	return out;
 //}
 //
-//std::istream& operator>>(std::istream& in, WorkTicket ticket)
-//{
-//
-//	in >> ticket.myticketDay;
-//	if (ticket.myticketDay >= 1 && ticket.myticketDay <= 31)
-//	{
-//		in.ignore();
-//		in >> ticket.myticketMonth;
-//		if (ticket.myticketMonth >= 1 && ticket.myticketMonth <= 12)
-//		{
-//			in.ignore();
-//			in >> ticket.myticketYear;
-//			if (ticket.myticketYear >= 2000 && ticket.myticketYear <= 2099)
-//			{
-//				std::cout << "\n Input succesfull!";
-//			}
-//			else
-//			{
-//				std::cout << "\n Enter between 2000 and 2099";
-//			}
-//		}
-//		else
-//		{
-//			std::cout << "\n Enter between 1 and 12";
-//		}
-//
-//	}
-//	else
-//	{
-//		std::cout << "\n Enter between 1 and 31";
-//	}
-//
-//
-//	return in;
-//}
+std::istream& operator>>(std::istream& in, WorkTicket ticket)
+{
+
+	in >> ticket.myticketDay;
+	if (ticket.myticketDay >= 1 && ticket.myticketDay <= 31)
+	{
+		in.ignore();
+		in >> ticket.myticketMonth;
+		if (ticket.myticketMonth >= 1 && ticket.myticketMonth <= 12)
+		{
+			in.ignore();
+			in >> ticket.myticketYear;
+			if (ticket.myticketYear >= 2000 && ticket.myticketYear <= 2099)
+			{
+				std::cout << "\n Input successful!";
+			}
+			else
+			{
+				std::cout << "\n Enter between 2000 and 2099";
+			}
+		}
+		else
+		{
+			std::cout << "\n Enter between 1 and 12";
+		}
+
+	}
+	else
+	{
+		std::cout << "\n Enter between 1 and 31";
+	}
+
+
+	return in;
+}

@@ -35,7 +35,7 @@ public:
 
 	///* Friend overloads */
 	//friend std::ostream& operator<<(std::ostream& out, const WorkTicket& ticket);
-	//friend std::istream& operator>>(std::istream& in, WorkTicket ticket);
+	friend std::istream& operator>>(std::istream& in, WorkTicket ticket);
 
 
 	// Accesors(getters) - This are the getters function which will be useful in displaying the values of the attributes in the console window. Getter function
