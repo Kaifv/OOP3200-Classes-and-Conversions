@@ -15,23 +15,26 @@ WorkTicket::WorkTicket(int ticketNumber, int ticketDay, int ticketMonth, int tic
 	SetWorkTicket(ticketNumber, ticketDay, ticketMonth, ticketYear, std::move(clientID), std::move(issueDescrip));
 }
 
+// Defining copy constructor, setting the values in this object from the SetWorkTicket object. 
 WorkTicket::WorkTicket(const WorkTicket& ticketobj)
 {
 	SetWorkTicket(ticketobj.GetNumber(), ticketobj.GetDay(), ticketobj.GetMonth(), ticketobj.GetYear(), ticketobj.GetID(), ticketobj.GetDescription());
 }
 
+// Converion operator, for converting class type to string type.
 WorkTicket::operator std::string() const
 {
 	std::string ticket = "Work Ticket #" + std::to_string(this->GetNumber()) + " -- " + this->GetID() + " (" + std::to_string(this->GetDay()) + "/" + std::to_string(this->GetMonth()) + "/" + std::to_string(this->GetYear()) + ") : " + this->GetDescription();
 	return ticket;
 }
 
-//
+//Defining equality operator for checking if two objects are same or not.
 bool WorkTicket::operator==(const WorkTicket& another_number) const
 {
 	return (GetNumber() == another_number.GetNumber());
 }
 
+//Defining assignment operator for assigning one object to other object.
 WorkTicket WorkTicket::operator=(const WorkTicket& other_ticket)
 {
 	SetNumber(other_ticket.GetNumber());
@@ -57,8 +60,11 @@ bool WorkTicket::SetWorkTicket(int ticketNumber, int ticketDay, int ticketMonth,
 	SetYear(ticketYear);
 
 	SetID(std::move(clientID));
-
-	SetDescription(issueDescrip);
+	if (myissueDescrip.length() > 1)
+	{
+		SetDescription(issueDescrip);
+	}
+	
 
 	return true;
 }
@@ -176,21 +182,14 @@ std::string WorkTicket::ShowWorkTicket() const
 
 }
 
-//std::string WorkTicket::output() const
-//{
-//	std::stringstream result;
-//
-//	result << "(" << myticketNumber << ")";
-//
-//	return result.str();
-//}
-//
-//std::ostream& operator<<(std::ostream& out, const WorkTicket& ticket)
-//{
-//	out << ticket.output();
-//	return out;
-//}
-//
+// Defining output stream operator, this will duplicate the functionality ShowWorkTicket().
+std::ostream& operator<<(std::ostream& out, const WorkTicket& ticket)
+{
+	out << ticket.ShowWorkTicket();
+	return out;
+}
+
+//Defining input stream operator, this will take the input from the user for entering another date, this also include validation.
 std::istream& operator>>(std::istream& in, WorkTicket ticket)
 {
 
@@ -205,7 +204,7 @@ std::istream& operator>>(std::istream& in, WorkTicket ticket)
 			in >> ticket.myticketYear;
 			if (ticket.myticketYear >= 2000 && ticket.myticketYear <= 2099)
 			{
-				std::cout << "\n Input successful!";
+				std::cout << "You entered " <<ticket.myticketDay << "/" << ticket.myticketMonth << "/" << ticket.myticketYear ;
 			}
 			else
 			{

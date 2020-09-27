@@ -79,10 +79,11 @@ int main()
 		}
 
 	}
+	// Assigning one object ticket to another ticket object 
 	WorkTicket other_ticket = arr[1].GetNumber();
-
 	cout << "\n A WorkTicket object was ASSIGNED";
 
+	// Proof that copy constructor worked, ticketobj now has copied all the attributes of the SetWorkTicket.
 	cout << "\nA WorkTicket object has been copied.";
 
 	std::cout << endl << endl;
@@ -99,13 +100,16 @@ int main()
 		std::cout << endl;
 	}
 
+	// Displaying an object by converting it to a string from a class type.
+	cout << arr[0].operator string() << endl;
+
+	// Checking if ticket number of first ticket and second ticket is same, using equality operator.
 	cout << "\n Are both the ticket numbers same?: " << std::to_string(arr[0].GetNumber() == arr[1].GetNumber()) << std::endl;
 
+	// Declaring another object and asking for the input in cin.
 	WorkTicket anotherDate;
-
 	cout << "\n Enter another ticket date: ";
 	cin >> anotherDate;
-
 
 	return 0;
 } //end of main function.

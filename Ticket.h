@@ -34,7 +34,7 @@ public:
 
 
 	///* Friend overloads */
-	//friend std::ostream& operator<<(std::ostream& out, const WorkTicket& ticket);
+	friend std::ostream& operator<<(std::ostream& out, const WorkTicket& ticket);
 	friend std::istream& operator>>(std::istream& in, WorkTicket ticket);
 
 
