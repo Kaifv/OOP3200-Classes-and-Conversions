@@ -22,15 +22,8 @@ WorkTicket::WorkTicket(const WorkTicket& ticketobj)
 
 WorkTicket::operator std::string() const
 {
-	const std::string ticketNumber;
-	const std::string ticketDescription;
-	const std::string ticketID;
-	const std::string ticketYear;
-	const std::string ticketMonth;
-	const std::string ticketDay;
-	
-	return "Work Ticket # " << ticketNumber << " - " << ticketID << "(" << ticketDay << "/" << ticketMonth << "/" << ticketYear << "): " << ticketDescription;
-	
+	std::string ticket = "Work Ticket #" + std::to_string(this->GetNumber()) + " -- " + this->GetID() + " (" + std::to_string(this->GetDay()) + "/" + std::to_string(this->GetMonth()) + "/" + std::to_string(this->GetYear()) + ") : " + this->GetDescription();
+	return ticket;
 }
 
 //
