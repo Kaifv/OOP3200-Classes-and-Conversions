@@ -28,8 +28,9 @@ public:
 	WorkTicket(const WorkTicket& ticketobj);
 
 	///* Operator overloads */
-	//bool operator==(const WorkTicket& another_number) const;
+	bool operator==(const WorkTicket& another_number) const;
 	//WorkTicket operator=(const WorkTicket& other_ticket);
+	operator std::string() const;
 
 
 	///* Friend overloads */

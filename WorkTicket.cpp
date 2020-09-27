@@ -99,9 +99,9 @@ int main()
 		std::cout << endl;
 	}
 
-	/*cout << "\n Are both the ticket numbers same?: " << std::to_string(arr[0].GetNumber() == arr[1].GetNumber()) << std::endl;
+	cout << "\n Are both the ticket numbers same?: " << std::to_string(arr[0].GetNumber() == arr[1].GetNumber()) << std::endl;
 
-	WorkTicket anotherDate;
+	/*WorkTicket anotherDate;
 
 	cout << "\n Enter another ticket date: ";
 	cin >> anotherDate;*/

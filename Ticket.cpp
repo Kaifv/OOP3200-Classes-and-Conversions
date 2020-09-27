@@ -19,11 +19,25 @@ WorkTicket::WorkTicket(const WorkTicket& ticketobj)
 {
 	SetWorkTicket(ticketobj.GetNumber(), ticketobj.GetDay(), ticketobj.GetMonth(), ticketobj.GetYear(), ticketobj.GetID(), ticketobj.GetDescription());
 }
+
+WorkTicket::operator std::string() const
+{
+	const std::string ticketNumber;
+	const std::string ticketDescription;
+	const std::string ticketID;
+	const std::string ticketYear;
+	const std::string ticketMonth;
+	const std::string ticketDay;
+	
+	return "Work Ticket # " << ticketNumber << " - " << ticketID << "(" << ticketDay << "/" << ticketMonth << "/" << ticketYear << "): " << ticketDescription;
+	
+}
+
 //
-//bool WorkTicket::operator==(const WorkTicket& another_number) const
-//{
-//	return (GetNumber() == another_number.GetNumber());
-//}
+bool WorkTicket::operator==(const WorkTicket& another_number) const
+{
+	return (GetNumber() == another_number.GetNumber());
+}
 
 //WorkTicket WorkTicket::operator=(const WorkTicket& other_ticket)
 //{
